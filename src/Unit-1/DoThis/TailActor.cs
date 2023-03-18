@@ -57,17 +57,20 @@
 
         #endregion
 
-        readonly string _filePath;
-        readonly IActorRef _reporterActor;
-        readonly FileObserver _observer;
-        readonly Stream _fileStream;
-        readonly StreamReader _fileStreamReader;
+        string _filePath;
+        IActorRef _reporterActor;
+        FileObserver _observer;
+        Stream _fileStream;
+        StreamReader _fileStreamReader;
 
         public TailActor(IActorRef reporterActor, string filePath)
         {
             _reporterActor = reporterActor;
             _filePath = filePath;
+        }
 
+        protected override void PreStart()
+        {
             //start watching one file for changes
             _observer = new FileObserver(Self, Path.GetFullPath(_filePath));
             _observer.Start();
@@ -102,6 +105,15 @@
             {
                 _reporterActor.Tell(ir.Text);
             }
+        }
+
+        protected override void PostStop()
+        {
+            _observer.Dispose();
+            _observer = null;
+            _fileStreamReader.Close();
+            _fileStreamReader.Dispose();
+            base.PostStop();
         }
     }
 }
