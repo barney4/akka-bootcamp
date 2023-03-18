@@ -9,12 +9,10 @@
     public class FileValidatorActor : UntypedActor
     {
         readonly IActorRef _consoleWriterActor;
-        readonly IActorRef _tailCoordinatorActor;
 
-        public FileValidatorActor(IActorRef consoleWriterActor, IActorRef tailCoordinatorActor)
+        public FileValidatorActor(IActorRef consoleWriterActor)
         {
             _consoleWriterActor = consoleWriterActor;
-            _tailCoordinatorActor = tailCoordinatorActor;
         }
 
         protected override void OnReceive(object message)
@@ -35,7 +33,8 @@
                 {
                     //signal successfull input
                     _consoleWriterActor.Tell(new Messages.InputSuccess($"Starting processing for {msg}"));
-                    _tailCoordinatorActor.Tell(new TailCoordinatorActor.StartTail(msg, _consoleWriterActor));
+                    Context.ActorSelection("akka://MyActorSystem/user/tailCoordinatorActor").
+                        Tell(new TailCoordinatorActor.StartTail(msg, _consoleWriterActor));
                 }
                 else
                 {
