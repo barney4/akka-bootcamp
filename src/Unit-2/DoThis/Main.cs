@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Akka.Actor;
+using Akka.Util.Internal;
+using ChartApp.Actors;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-using Akka.Actor;
-using Akka.Util.Internal;
-using ChartApp.Actors;
 
 namespace ChartApp
 {
