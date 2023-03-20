@@ -28,116 +28,109 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgUsers = new System.Windows.Forms.DataGridView();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.tsProgress = new System.Windows.Forms.ToolStripProgressBar();
-            this.tsStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.Owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RepoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.URL = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.Shared = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Issues = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stars = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Forks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsers)).BeginInit();
-            this.statusStrip1.SuspendLayout();
-            this.SuspendLayout();
+            dgUsers = new System.Windows.Forms.DataGridView();
+            Owner = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            RepoName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            URL = new System.Windows.Forms.DataGridViewLinkColumn();
+            Shared = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Issues = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Stars = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            Forks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            statusStrip1 = new System.Windows.Forms.StatusStrip();
+            tsProgress = new System.Windows.Forms.ToolStripProgressBar();
+            tsStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            ((System.ComponentModel.ISupportInitialize)dgUsers).BeginInit();
+            statusStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // dgUsers
             // 
-            this.dgUsers.AllowUserToOrderColumns = true;
-            this.dgUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Owner,
-            this.RepoName,
-            this.URL,
-            this.Shared,
-            this.Issues,
-            this.Stars,
-            this.Forks});
-            this.dgUsers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgUsers.Location = new System.Drawing.Point(0, 0);
-            this.dgUsers.Name = "dgUsers";
-            this.dgUsers.Size = new System.Drawing.Size(739, 322);
-            this.dgUsers.TabIndex = 0;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsProgress,
-            this.tsStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 300);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(739, 22);
-            this.statusStrip1.TabIndex = 1;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // tsProgress
-            // 
-            this.tsProgress.Name = "tsProgress";
-            this.tsProgress.Size = new System.Drawing.Size(100, 16);
-            this.tsProgress.Visible = false;
-            // 
-            // tsStatus
-            // 
-            this.tsStatus.Name = "tsStatus";
-            this.tsStatus.Size = new System.Drawing.Size(73, 17);
-            this.tsStatus.Text = "Processing...";
-            this.tsStatus.Visible = false;
+            dgUsers.AllowUserToOrderColumns = true;
+            dgUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgUsers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Owner, RepoName, URL, Shared, Issues, Stars, Forks });
+            dgUsers.Dock = System.Windows.Forms.DockStyle.Fill;
+            dgUsers.Location = new System.Drawing.Point(0, 0);
+            dgUsers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            dgUsers.Name = "dgUsers";
+            dgUsers.Size = new System.Drawing.Size(862, 372);
+            dgUsers.TabIndex = 0;
             // 
             // Owner
             // 
-            this.Owner.HeaderText = "Owner";
-            this.Owner.Name = "Owner";
+            Owner.HeaderText = "Owner";
+            Owner.Name = "Owner";
             // 
             // RepoName
             // 
-            this.RepoName.HeaderText = "Name";
-            this.RepoName.Name = "RepoName";
+            RepoName.HeaderText = "Name";
+            RepoName.Name = "RepoName";
             // 
             // URL
             // 
-            this.URL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.URL.HeaderText = "URL";
-            this.URL.Name = "URL";
+            URL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            URL.HeaderText = "URL";
+            URL.Name = "URL";
             // 
             // Shared
             // 
-            this.Shared.HeaderText = "SharedStars";
-            this.Shared.Name = "Shared";
+            Shared.HeaderText = "SharedStars";
+            Shared.Name = "Shared";
             // 
             // Issues
             // 
-            this.Issues.HeaderText = "Open Issues";
-            this.Issues.Name = "Issues";
+            Issues.HeaderText = "Open Issues";
+            Issues.Name = "Issues";
             // 
             // Stars
             // 
-            this.Stars.HeaderText = "Stars";
-            this.Stars.Name = "Stars";
+            Stars.HeaderText = "Stars";
+            Stars.Name = "Stars";
             // 
             // Forks
             // 
-            this.Forks.HeaderText = "Forks";
-            this.Forks.Name = "Forks";
+            Forks.HeaderText = "Forks";
+            Forks.Name = "Forks";
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsProgress, tsStatus });
+            statusStrip1.Location = new System.Drawing.Point(0, 348);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            statusStrip1.Size = new System.Drawing.Size(862, 24);
+            statusStrip1.TabIndex = 1;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // tsProgress
+            // 
+            tsProgress.Name = "tsProgress";
+            tsProgress.Size = new System.Drawing.Size(117, 18);
+            tsProgress.Visible = false;
+            // 
+            // tsStatus
+            // 
+            tsStatus.Name = "tsStatus";
+            tsStatus.Size = new System.Drawing.Size(73, 19);
+            tsStatus.Text = "Processing...";
+            tsStatus.Visible = false;
             // 
             // RepoResultsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 322);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.dgUsers);
-            this.Name = "RepoResultsForm";
-            this.Text = "Repos Similar to {RepoName}";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RepoResultsForm_FormClosing);
-            this.Load += new System.EventHandler(this.RepoResultsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgUsers)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(862, 372);
+            Controls.Add(statusStrip1);
+            Controls.Add(dgUsers);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "RepoResultsForm";
+            Text = "Repos Similar to {RepoName}";
+            FormClosing += RepoResultsForm_FormClosing;
+            Load += RepoResultsForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgUsers).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

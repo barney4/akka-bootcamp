@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using Akka.Actor;
+﻿using Akka.Actor;
 using Akka.Routing;
 using Octokit;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GithubActors.Actors
 {
@@ -79,7 +78,9 @@ namespace GithubActors.Actors
 
         protected override void PreStart()
         {
-            _githubWorker = Context.ActorOf(Props.Create(() => new GithubWorkerActor(GithubClientFactory.GetClient)));
+            _githubWorker = Context.ActorOf(Props.Create(() =>
+                new GithubWorkerActor(GithubClientFactory.GetClient))
+                .WithRouter(new RoundRobinPool(10)));
         }
 
         private void Waiting()
